@@ -4,9 +4,15 @@ This is a tool created for quickly and efficiently visualizing data from several
 NOTE: This tool was created for work, and the data is saved in a very specific format. Therefore, the code in this project is written specifically to be able to analyze these data files. 
 
 # How to run locally
-This project is meant to be distributed as a package. Therefore, there is a .tar.gz file that should be installed. First, download the .tar file, then open a command line prompt in that location and run the command "python -m pip install dataplotter-1.0.2.tar.gz". Running this command will install the dataplotter package and create a batch file that, when clicked, will automatically run the dataplotter module. Alternatively, the dataplotter module can be run by typing the command "python -m dataplotter" in the command line.
+This project is meant to be distributed as a package. Therefore, there is a .tar.gz file that should be installed. First, download the .tar file, then open a command line prompt in that location and run the command "python -m pip install dataplotter-1.0.2.tar.gz". Running this command will install the dataplotter package and create a batch file that, when clicked, will automatically run the dataplotter module.
 
 Another option to install the package locally is to clone the repo locally and run the `setup`:
   
-  python setup.py install
+      python setup.py install
+
+Once the package is installed, you can run the module by typing this command into the command line: 
+      
+      python -m dataplotter
+
+This will work with both installation methods.
 

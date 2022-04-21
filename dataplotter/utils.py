@@ -5,6 +5,10 @@ import tkinter as tk
 
 def get_timestamp(path):
 
+    '''
+    This function gets the timestamp of a data file
+    '''
+    
     with open(path,'r') as f:
 
         for line in f:
@@ -15,7 +19,8 @@ def get_timestamp(path):
         next(f)
         next(f)
         line = next(f)
-
+        
+        # this line in the data file contains the time stamp for the file
         data = line.split('\t')
         tstamp = data[1]
 
@@ -23,8 +28,13 @@ def get_timestamp(path):
 
 
 def plot(files,channels):
-
+    
+    '''
+    This function gathers all the specified data from the data files and creates plots
+    '''
+    
     print('New selection made. Analyzing data.\nFiles complete: 0/'+str(len(files)))
+    
     # get data from files
     all_data = []
     for i,file in enumerate(sorted(files,key=lambda x:get_timestamp(x))):
@@ -47,9 +57,11 @@ def plot(files,channels):
         all_channels = next(f).strip().split('\t')
         next(f)
         idx = [all_channels.index(i) for i in channels]
-
+    
+        # initialize matrix to save time and space efficiency
         data = np.zeros((len_f,len(idx)),dtype=np.float16)
-
+        
+        # loop through lines in data file and add data to numpy array "data"
         for j,line in enumerate(f):
 
             tmp = line.split('\t')
@@ -65,6 +77,7 @@ def plot(files,channels):
     print('-------------------\n')
     all_data = np.vstack(all_data) # combine data from each file into one large numpy array
 
+    # plot data
     for i in range(all_data.shape[1]):
         plt.plot(all_data[:,i],label=channels[i])
 

@@ -10,13 +10,13 @@ Another option to install the package locally is to clone the repo locally and r
   
       python setup.py install
 
-Once the package is installed, you can run the module by typing this command into the command line: 
-      
-      python -m dataplotter
-
 In order to install all the required packages, run the following command from the command line:
 
       pip install -r requirements.txt
+
+Once the package is installed, you can run the module by typing this command into the command line: 
+      
+      python -m dataplotter
 
 This will work with both installation methods.
 

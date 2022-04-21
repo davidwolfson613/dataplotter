@@ -73,7 +73,7 @@ class PlotterGUI(tk.Tk):
         self.chosen_list = tk.Listbox(self,width=30)
         self.chosen_list.grid(row=6,column=1)
 
-        self.plot_btn = tk.Button(self,text='Plot',font=('Arial',15),command=lambda: [popup(),plot(self.files,self.chosen_channels)])
+        self.plot_btn = tk.Button(self,text='Plot',font=('Arial',15),command=lambda: plot(self.files,self.chosen_channels))
         self.plot_btn.grid(row=7,columnspan=2)
 
     def browse_files(self):
@@ -83,7 +83,6 @@ class PlotterGUI(tk.Tk):
                                             filetypes=(('Dat file','*.dat*'),
                                                         ('All files','*.*'))
                                             )
-        # print(file)
         self.files = files
         if len(files) > 0:
             self.label_file_exp.configure(text=f'{len(files)} file(s) chosen')
@@ -104,7 +103,6 @@ class PlotterGUI(tk.Tk):
                     break
             channels = next(f).strip().split('\t')[7:]
             channel_set.add(tuple(channels))
-            # ddict[tuple(channels)].append(file)
 
             f.close()
 
@@ -132,6 +130,7 @@ class PlotterGUI(tk.Tk):
             for c in sorted(self.shared_channels):
                 if typed.lower() in c.lower():
                     data.append(c)
+
         # delete whatever is in listbox and update it with similar channels
         self.channel_list.delete(0,'end')
         self.channel_list.insert('end',*data)

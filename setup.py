@@ -10,7 +10,7 @@ setup(
     packages=find_packages(),
 )
 
-#use with block to create icon on desktop
+# use this block to create icon on desktop
 with open(pathlib.Path('c:/Users',os.environ['USERNAME'],'Desktop','dataplotter.bat'),'w') as f:
 
     f.write('@echo off\n')

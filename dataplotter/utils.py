@@ -61,6 +61,8 @@ def plot(files,channels):
 
         f.close()
         print('\nFiles complete: '+str(i+1)+'/'+str(len(files)))
+
+    print('-------------------\n')
     all_data = np.vstack(all_data) # combine data from each file into one large numpy array
 
     for i in range(all_data.shape[1]):
@@ -72,14 +74,8 @@ def plot(files,channels):
     plt.grid()
     plt.show()
 
-def popup():
-
-    msg = tk.Tk()
-    lbl = tk.Label(msg,text='Plotting Data. Please wait...',font=('Arial',15))
-    lbl.pack()
-
 if __name__ == '__main__':
 
-    files = [r'C:\Users\LZHL65\Desktop\TC57ASeal12021614091551_nTrans_5.dat',r'C:\Users\LZHL65\Desktop\TC57ASeal12021614091551_nTrans_4.dat']
+    files = [r'C:\Users\LZHL65\Desktop\TC57ASeal12021614091551_nTrans_0.dat',r'C:\Users\LZHL65\Desktop\TC57ASeal12021614091551_nTrans_1.dat']
     channels = ['humEcc1Feedback','tEcc1Feedback','tChiller2Feedback']
     plot(files,channels)

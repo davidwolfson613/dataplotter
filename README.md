@@ -14,5 +14,9 @@ Once the package is installed, you can run the module by typing this command int
       
       python -m dataplotter
 
+In order to install all the required packages, run the following command from the command line:
+
+      pip install -r requirements.txt
+
 This will work with both installation methods.
 
